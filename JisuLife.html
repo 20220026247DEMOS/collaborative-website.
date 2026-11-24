@@ -1,0 +1,465 @@
+     
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JISULIFE | Portable Handheld Fan</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f5;
+            color: #252525;
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            padding: 20px 7%;
+            border-bottom: 1px solid #ddd;
+        }
+
+        nav h1 {
+            margin: 0;
+            font-size: 30px;
+            letter-spacing: 4px;
+        }
+
+        /* Back Button */
+        .back-btn {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #252525;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: #65856e;
+            transform: translateX(-5px);
+        }
+
+        /* Product Section */
+        .product-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            max-width: 1200px;
+            margin: auto;
+            padding: 70px 30px;
+        }
+
+        /* Product Image */
+        .product-image {
+            flex: 1;
+            min-width: 0;
+            background-color: #e8ebe5;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: contain;
+            display: block;
+            transition: transform 0.4s;
+        }
+
+        .product-image img:hover {
+            transform: scale(1.08);
+        }
+
+        /* Product Information */
+        .product-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .category {
+            color: #65856e;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .product-info h2 {
+            font-size: 46px;
+            margin: 15px 0;
+            line-height: 1.1;
+        }
+
+        .tagline {
+            font-size: 20px;
+            color: #777;
+        }
+
+        .price {
+            font-size: 32px;
+            font-weight: bold;
+            margin: 25px 0;
+        }
+
+        .description {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        /* Color Options */
+        .colors {
+            display: flex;
+            gap: 12px;
+            margin: 15px 0 25px;
+        }
+
+        .color-option {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: 2px solid #ccc;
+            cursor: pointer;
+        }
+
+        .color-option:hover,
+        .color-option:focus-visible {
+            outline: 2px solid #333;
+            outline-offset: 3px;
+        }
+
+        .white {
+            background-color: #ffffff;
+        }
+
+        .green {
+            background-color: #9eaf98;
+        }
+
+        .pink {
+            background-color: #e6b8bd;
+        }
+
+        .black {
+            background-color: #333333;
+        }
+
+        /* Buttons */
+        .buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 17px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .add-to-cart {
+            background-color: #252525;
+            color: white;
+            border: 2px solid #252525;
+        }
+
+        .add-to-cart:hover {
+            background-color: #65856e;
+            border-color: #65856e;
+        }
+
+        .buy-now {
+            background-color: transparent;
+            color: #252525;
+            border: 2px solid #252525;
+        }
+
+        .buy-now:hover {
+            background-color: #252525;
+            color: white;
+        }
+
+        /* Features Section */
+        .features {
+            background-color: white;
+            padding: 60px 7%;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .features-subtitle {
+            color: #777;
+            margin-bottom: 40px;
+        }
+
+        .feature-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .feature-card {
+            background-color: #f8f8f5;
+            padding: 30px 20px;
+            border-radius: 15px;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+        }
+
+        .feature-card p {
+            color: #777;
+            line-height: 1.6;
+        }
+
+        /* Promotional Section */
+        .banner {
+            background-color: #dce5d8;
+            padding: 65px 20px;
+            text-align: center;
+        }
+
+        .banner h2 {
+            font-size: 38px;
+            margin: 0 0 15px;
+        }
+
+        .banner p {
+            color: #52634e;
+            font-size: 18px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #252525;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        /* Mobile Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                padding: 18px 5%;
+            }
+
+            nav h1 {
+                font-size: 23px;
+                letter-spacing: 2px;
+            }
+
+            .back-btn {
+                padding: 10px 16px;
+                font-size: 14px;
+            }
+
+            .product-container {
+                flex-direction: column;
+                gap: 25px;
+                padding: 30px 20px;
+            }
+
+            .product-image,
+            .product-info {
+                width: 100%;
+            }
+
+            .product-image img {
+                height: 350px;
+            }
+
+            .product-info h2 {
+                font-size: 36px;
+            }
+
+            .feature-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .banner h2 {
+                font-size: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .feature-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <h1>JISULIFE</h1>
+
+        <!-- Back to Homepage -->
+        <a href="index.html" class="back-btn">
+            &larr; Back
+        </a>
+    </nav>
+
+    <!-- Product Section -->
+    <section class="product-container" id="product">
+
+        <div class="product-image">
+            <img src="/jisulife.jpg"
+                 alt="JISULIFE Portable Handheld Fan">
+        </div>
+
+        <div class="product-info">
+
+            <p class="category">PERSONAL COOLING</p>
+
+            <h2>JISULIFE<br>Handheld Fan</h2>
+
+            <p class="tagline">
+                Small fan. Powerful breeze.
+            </p>
+
+            <p class="price">₱1,499.00</p>
+
+            <p class="description">
+                Stay cool wherever life takes you with the
+                JISULIFE Portable Handheld Fan. Designed for
+                everyday convenience, it combines powerful
+                airflow, a compact design, and rechargeable
+                convenience in one stylish device.
+                Perfect for school, work, travel, and outdoor
+                activities.
+            </p>
+
+            <strong>Choose your color:</strong>
+
+            <div class="colors">
+                <button class="color-option white"
+                        type="button"
+                        title="White"
+                        aria-label="White"></button>
+
+                <button class="color-option green"
+                        type="button"
+                        title="Green"
+                        aria-label="Green"></button>
+
+                <button class="color-option pink"
+                        type="button"
+                        title="Pink"
+                        aria-label="Pink"></button>
+
+                <button class="color-option black"
+                        type="button"
+                        title="Black"
+                        aria-label="Black"></button>
+            </div>
+
+            <div class="buttons">
+                <button class="btn add-to-cart"
+                        onclick="alert('JISULIFE added to cart!')">
+                    Add to Cart
+                </button>
+
+                <button class="btn buy-now"
+                        onclick="alert('Checkout coming soon!')">
+                    Buy Now
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Product Features -->
+    <section class="features" id="features">
+
+        <h2>Designed for Your Everyday Life</h2>
+
+        <p class="features-subtitle">
+            Experience comfort wherever you go.
+        </p>
+
+        <div class="feature-container">
+
+            <div class="feature-card">
+                <div class="feature-icon">💨</div>
+                <h3>Powerful Airflow</h3>
+                <p>
+                    Enjoy a refreshing breeze on hot days.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔋</div>
+                <h3>Rechargeable Battery</h3>
+                <p>
+                    Convenient rechargeable power for daily use.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎒</div>
+                <h3>Portable Design</h3>
+                <p>
+                    Compact and lightweight for easy carrying.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⚙️</div>
+                <h3>Adjustable Speed</h3>
+                <p>
+                    Customize the airflow to your comfort.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Promotional Banner -->
+    <section class="banner">
+        <h2>Stay Cool. Anytime. Anywhere.</h2>
+        <p>
+            Your everyday companion for a cooler lifestyle.
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 JISULIFE Product Showcase</p>
+    </footer>
+
+</body>
+</html>

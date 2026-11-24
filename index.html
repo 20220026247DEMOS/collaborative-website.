@@ -1,0 +1,311 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wares of Benedict</title>
+
+    <style>
+        
+    html, body {
+        margin: 0;
+        padding: 0;
+        min-height: 100%;
+    }
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+    }
+
+    main {
+        flex: 1;
+    }
+
+
+        /* Navigation Bar */
+        nav {
+            background-color: #222;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        
+    nav h2 {
+        font-size: 60px;
+        margin: 0;
+
+        background: linear-gradient(
+            90deg,
+            red,
+            orange,
+            yellow,
+            lime,
+            cyan,
+            blue,
+            violet,
+            red
+        );
+
+        background-size: 300% 100%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        animation: rainbowGlow 4s linear infinite;
+
+        filter: drop-shadow(0 0 8px #ff00ff);
+    }
+
+    /* Animated Rainbow Effect */
+    @keyframes rainbowGlow {
+        0% {
+            background-position: 0% 50%;
+            filter: drop-shadow(0 0 5px red);
+        }
+
+        25% {
+            filter: drop-shadow(0 0 12px yellow);
+        }
+
+        50% {
+            background-position: 100% 50%;
+            filter: drop-shadow(0 0 15px cyan);
+        }
+
+        75% {
+            filter: drop-shadow(0 0 12px violet);
+        }
+
+        100% {
+            background-position: 0% 50%;
+            filter: drop-shadow(0 0 5px red);
+        }
+    }
+
+
+        /* Product Section */
+        .products {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 75px;
+            padding: 80px 40px;
+            min-height: 400px;
+            flex-wrap: wrap;
+        }
+
+        /* Individual Product */
+        .product {
+            text-align: center;
+            width: 250px;
+        }
+
+        /* Image Container */
+        .image-frame {
+            position: relative;
+            width: 250px;
+            height: 250px;
+        }
+
+        /* Product Images */
+        
+    .image-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        box-sizing: border-box;
+        border: 2px solid #333;
+        border-radius: 10px;
+    }
+
+        /* Rainbow Arrows */
+        .rainbow-arrow {
+            position: absolute;
+            top: 50%;
+            font-size: 40px;
+            font-weight: bold;
+            line-height: 1;
+
+            background: linear-gradient(
+                90deg,
+                red,
+                orange,
+                yellow,
+                lime,
+                cyan,
+                blue,
+                violet
+            );
+
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+
+            animation: rainbow 3s linear infinite;
+        }
+
+        /* Left Arrow */
+        .arrow-left {
+            left: -45px;
+            animation:
+                moveLeft 1.5s ease-in-out infinite,
+                rainbow 3s linear infinite;
+        }
+
+        /* Right Arrow */
+        .arrow-right {
+            right: -45px;
+            animation:
+                moveRight 1.5s ease-in-out infinite,
+                rainbow 3s linear infinite;
+        }
+
+        /* Left Arrow Moves Toward Image */
+        @keyframes moveLeft {
+            0%, 100% {
+                transform: translate(0, -50%);
+            }
+
+            50% {
+                transform: translate(12px, -50%);
+            }
+        }
+
+        /* Right Arrow Moves Toward Image */
+        @keyframes moveRight {
+            0%, 100% {
+                transform: translate(0, -50%);
+            }
+
+            50% {
+                transform: translate(-12px, -50%);
+            }
+        }
+
+        /* Rainbow Color Animation */
+        @keyframes rainbow {
+            0% {
+                filter: hue-rotate(0deg);
+            }
+
+            100% {
+                filter: hue-rotate(360deg);
+            }
+        }
+
+        /* Product Name */
+        .product a {
+            display: block;
+            margin-top: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .product a:hover {
+            color: #ea08ff;
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            background-color: #222;
+            color: white;
+            padding: 20px;
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            .rainbow-arrow {
+                animation: none;
+                transform: translateY(-50%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <h2>The Wares of Benedict</h2>
+    </nav>
+
+    <!-- Product Display -->
+    <main>
+        <section class="products">
+
+            <!-- Product 1 -->
+            <div class="product">
+                <div class="image-frame">
+
+                    <span class="rainbow-arrow arrow-left"
+                          aria-hidden="true">➜</span>
+
+                    <img src="product1.jpg" alt="Product 1">
+
+                    <span class="rainbow-arrow arrow-right"
+                          aria-hidden="true">⬅</span>
+
+                </div>
+
+                <a href="product1.html">Product 1</a>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product">
+                <div class="image-frame">
+
+                    <span class="rainbow-arrow arrow-left"
+                          aria-hidden="true">➜</span>
+
+                    <img src="product2.jpg" alt="Product 2">
+
+                    <span class="rainbow-arrow arrow-right"
+                          aria-hidden="true">⬅</span>
+
+                </div>
+
+                <a href="product2.html">Product 2</a>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product">
+                <div class="image-frame">
+
+                    <span class="rainbow-arrow arrow-left"
+                          aria-hidden="true">➜</span>
+
+                    <img src="product3.jpg" alt="Product 3">
+
+                    <span class="rainbow-arrow arrow-right"
+                          aria-hidden="true">⬅</span>
+
+                </div>
+
+                <a href="product3.html">Product 3</a>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>the best items of the land</p>
+    </footer>
+
+</body>
+</html>

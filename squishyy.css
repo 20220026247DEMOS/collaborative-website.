@@ -1,0 +1,41 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #fcf3b8;
+}
+
+h1 {
+  background-color: black;
+  color: white;
+  display: inline-block;
+  padding: 10px 30px;
+}
+
+table {
+  margin: 0 auto;
+}
+
+td {
+  width: 300px;
+  vertical-align: middle;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
+p {
+  width: 500px;
+  margin: 30px auto;
+  font-size: 18px;
+}
